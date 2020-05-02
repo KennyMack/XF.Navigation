@@ -1,4 +1,4 @@
-# XF.Navigation for Xamarin Forms [![Build status](https://ci.appveyor.com/nuget/xf-navigation-nvggb1v23w7x/branch/master?svg=true)](https://ci.appveyor.com/project/KennyMack/xf-navigation/branch/master)
+# XF.Navigation for Xamarin Forms [![Build status](https://ci.appveyor.com/api/projects/status/t3hqn8joo9bbp2ep?svg=true)](https://ci.appveyor.com/project/KennyMack/xf-navigation)
 **XF.Navigation** - is a cross platform plugin for [Xamarin.Forms](https://www.xamarin.com/forms) which extends NavigationPage to better control when pages appears or disappear.
 
 ## Support platforms

@@ -2,12 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>XF.Navigation</id>
-        <version>1.0.0.0</version>
+        <version>1.0.0.1</version>
         <title>Navigation for Xamarin Forms</title>
         <authors>Jonathan Henrique do Vale</authors>
         <owners>KennyMack</owners>
         <projectUrl>https://github.com/KennyMack/XF.Navigation</projectUrl>
-        <iconUrl>https://raw.githubusercontent.com/KennyMack/XF.Navigation/master/icons/icon.png</iconUrl>
+        <iconUrl>https://github.com/KennyMack/XF.Navigation/blob/master/icons/XF.Navigation.png</iconUrl>
         <license type="expression">MIT</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Extension for sidebar navigation for Xamarin Forms</description>

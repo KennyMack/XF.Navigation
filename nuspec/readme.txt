@@ -1,14 +1,5 @@
-﻿Rg.Plugins.Popup Readme
+﻿XF.Navigation Readme
 
-Project Site: https://github.com/rotorgames/Rg.Plugins.Popup
+Project Site: https://github.com/KennyMack/XF.Navigation
 
-You can find more information in the documentation: https://github.com/rotorgames/Rg.Plugins.Popup/wiki
-
-
-****************************** IMPORTANT ****************************************
-
-Please, read GETTING STARTED before to use this plugin: https://github.com/rotorgames/Rg.Plugins.Popup/wiki/Getting-started
-
-There are very important things about initialization and working with the back button on Android.
-
-****************************** IMPORTANT ****************************************
+You can find more information in the documentation: https://github.com/KennyMack/XF.Navigation/wiki
