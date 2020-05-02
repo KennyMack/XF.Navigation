@@ -1,0 +1,28 @@
+version: 1.0.0.{build}
+branches:
+  only:
+    - master
+    - develop
+skip_tags: true
+image: Visual Studio 2019
+configuration: Publish
+platform: Any CPU
+assembly_info:
+    patch: true
+    file: '**\AssemblyInfo.*'
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}'
+environment:
+    solution_dir: "src"
+    nuspec_dir: "nuspec"
+init:
+    - nuget update -self
+before_build:
+    - nuget restore %solution_dir%
+build_script:
+    - msbuild %solution_dir%/XF.Navigation.sln /t:Build /p:Configuration=Publish /p:Platform="Any CPU"
+after_build:
+    - nuget pack %nuspec_dir%/XF.Navigation.nuspec -Version %APPVEYOR_BUILD_VERSION%
+artifacts:
+    - path: "*.nupkg"

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>XF.Navigation</id>
+        <version>1.0.0.0</version>
+        <title>Navigation for Xamarin Forms</title>
+        <authors>Jonathan Henrique do Vale</authors>
+        <owners>KennyMack</owners>
+        <projectUrl>https://github.com/KennyMack/XF.Navigation</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/KennyMack/XF.Navigation/master/icons/icon.png</iconUrl>
+        <license type="expression">MIT</license>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Extension for sidebar navigation for Xamarin Forms</description>
+        <tags>XF_Navigation, XF-Navigation, XF.Navigation, navigation, xamarin, android, plugin, Xamarin.Forms, Forms</tags>
+        <dependencies>
+            <dependency id="Xamarin.Forms" version="4.5.0" />
+        </dependencies>
+    </metadata>
+    <files>
+      <file src="readme.txt" target="readme.txt" /> 
+      <!--PCL-->
+      <file src="..\src\XF.Navigation\bin\Release\netstandard1.0\XF.Navigation.dll" target="lib\netstandard1.0" />
+      <file src="..\src\XF.Navigation\bin\Release\netstandard1.0\XF.Navigation.pdb" target="lib\netstandard1.0" />
+      <!--Android-->
+      <file src="..\src\XF.Navigation.Droid\bin\Release\XF.Navigation.dll" target="lib\MonoAndroid" />
+      <file src="..\src\XF.Navigation.Droid\bin\Release\XF.Navigation.pdb" target="lib\MonoAndroid" />
+      <file src="..\src\XF.Navigation.Droid\bin\Release\XF.Navigation.Droid.dll" target="lib\MonoAndroid" />
+      <file src="..\src\XF.Navigation.Droid\bin\Release\XF.Navigation.Droid.pdb" target="lib\MonoAndroid" />
+      <!--IOS-->
+      <file src="..\src\XF.Navigation.IOS\bin\Release\XF.Navigation.dll" target="lib\MonoTouch" />
+      <file src="..\src\XF.Navigation.IOS\bin\Release\XF.Navigation.pdb" target="lib\MonoTouch" />
+      <file src="..\src\XF.Navigation.IOS\bin\Release\XF.Navigation.dll" target="lib\Xamarin.IOS" />
+      <file src="..\src\XF.Navigation.IOS\bin\Release\XF.Navigation.pdb" target="lib\Xamarin.IOS" />
+      <file src="..\src\XF.Navigation.IOS\bin\Release\XF.Navigation.IOS.dll" target="lib\MonoTouch" />
+      <file src="..\src\XF.Navigation.IOS\bin\Release\XF.Navigation.IOS.pdb" target="lib\MonoTouch" />
+      <file src="..\src\XF.Navigation.IOS\bin\Release\XF.Navigation.IOS.dll" target="lib\Xamarin.IOS" />
+      <file src="..\src\XF.Navigation.IOS\bin\Release\XF.Navigation.IOS.pdb" target="lib\Xamarin.IOS" />
+    </files>
+</package>

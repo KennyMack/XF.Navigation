@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard1.0</TargetFramework>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>XF_Navigation, XF-Navigation, XF.Navigation, navigation, xamarin, android, plugin, Xamarin.Forms, Forms</PackageTags>
+        <PackageIcon>XF.Navigation.png</PackageIcon>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="readme.txt" />
+      <None Include="..\..\icons\XF.Navigation.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+    </ItemGroup>
+</Project>
