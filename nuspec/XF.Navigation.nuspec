@@ -7,7 +7,7 @@
         <authors>Jonathan Henrique do Vale</authors>
         <owners>KennyMack</owners>
         <projectUrl>https://github.com/KennyMack/XF.Navigation</projectUrl>
-        <iconUrl>https://github.com/KennyMack/XF.Navigation/blob/master/icons/XF.Navigation.png</iconUrl>
+        <icon>icons\XF.Navigation.png</icon>
         <license type="expression">MIT</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Extension for sidebar navigation for Xamarin Forms</description>
@@ -17,7 +17,8 @@
         </dependencies>
     </metadata>
     <files>
-      <file src="readme.txt" target="readme.txt" /> 
+      <file src="..\icons\XF.Navigation.png" target="icons\" />
+      <file src="readme.txt" target="readme.txt" />
       <!--PCL-->
       <file src="..\src\XF.Navigation\bin\Release\netstandard1.0\XF.Navigation.dll" target="lib\netstandard1.0" />
       <file src="..\src\XF.Navigation\bin\Release\netstandard1.0\XF.Navigation.pdb" target="lib\netstandard1.0" />
