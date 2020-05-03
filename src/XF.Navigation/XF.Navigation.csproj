@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netstandard1.0</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageTags>XF_Navigation, XF-Navigation, XF.Navigation, navigation, xamarin, android, plugin, Xamarin.Forms, Forms</PackageTags>
@@ -8,13 +8,27 @@
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     </PropertyGroup>
     <ItemGroup>
+      <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.2" />
       <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
     </ItemGroup>
     <ItemGroup>
+      <None Remove="FormsResources\times-solid.svg" />
       <None Remove="readme.txt" />
+      <EmbeddedResource Include="FormsResources\times-solid.svg" />
       <None Include="..\..\icons\XF.Navigation.png">
         <Pack>True</Pack>
         <PackagePath></PackagePath>
       </None>
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Update="FormsResources\NavigationColors.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="UI\Pages\NavigationResources.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
+      <EmbeddedResource Update="UI\Pages\ContentModalPage.xaml">
+        <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      </EmbeddedResource>
     </ItemGroup>
 </Project>

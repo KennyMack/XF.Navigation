@@ -16,6 +16,8 @@ namespace Demo
 
             DependencyService.Register<MockDataStore>();
 
+            XF.Navigation.Forms.Navigator.Init(this, "NavBarConfig.Style");
+
             var navService = new NavigationService();
 
             navService.SetRootView(new ItemsPage());

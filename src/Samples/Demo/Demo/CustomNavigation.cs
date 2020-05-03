@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using XF.Navigation.NavBar;
+using XF.Navigation.UI.Pages;
 
 namespace Demo
 {
@@ -14,6 +15,7 @@ namespace Demo
         private object _currentNavigationParameter;
         public CustomNavigation(Page rootPage) : base(rootPage)
         {
+           
         }
 
         public CustomNavigation(Page rootPage, object parameter) : base(rootPage)
@@ -23,24 +25,24 @@ namespace Demo
 
         public async Task PopViewAsync()
         {
-            await Navigation.PopAsync(true);
+            await base.PopViewAsync(true);
         }
 
         public async Task PushViewAsync(Page view, object parameter = null)
         {
             _currentNavigationParameter = parameter;
-            await Navigation.PushAsync(view, true);
+            await base.PushViewAsync(view, true);
         }
 
-        public async Task PushModalAsync(Page view, object parameter = null)
+        public async Task PushModalAsync(ContentModalPage view, object parameter = null)
         {
             _currentNavigationParameter = parameter;
-            await Navigation.PushModalAsync(view, true);
+            await base.PushModalAsync(view, true);
         }
 
         public async Task PopModalAsync()
         {
-            await Navigation.PopModalAsync(true);
+            await base.PopModalAsync(true);
         }
 
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)

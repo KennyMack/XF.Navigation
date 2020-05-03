@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,14 @@ namespace Demo.Views
         public SecondPage()
         {
             InitializeComponent();
+        }
+
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+
+            var page = new SecondPageModal();
+
+            await PopupNavigation.Instance.PushAsync(page);
         }
     }
 }

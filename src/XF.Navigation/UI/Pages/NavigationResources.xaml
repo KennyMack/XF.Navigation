@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <OnPlatform x:Key="XFNavigationFontAwesomeBrands" x:TypeArguments="x:String"
+                Android="FontAwesome5Brands.otf#Regular" 
+                iOS="FontAwesome5Regular"/>
+
+    <OnPlatform x:Key="XFNavigationFontAwesomeSolid" x:TypeArguments="x:String"
+                Android="FontAwesome5Solid.otf#Regular" 
+                iOS="FontAwesome5Solid"/>
+
+    <OnPlatform x:Key="XFNavigationFontAwesomeRegular" x:TypeArguments="x:String"
+                Android="FontAwesome5Regular.otf#Regular" 
+                iOS="FontAwesome5FRegular"/>
+
+    <Style x:Key="XFNavigationCloseButton" TargetType="{x:Type Button}">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HeightRequest" Value="24" />
+        <Setter Property="WidthRequest" Value="24" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+</ResourceDictionary>

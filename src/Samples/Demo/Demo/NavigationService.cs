@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using XF.Navigation.Extras;
+using XF.Navigation.UI.Pages;
 
 namespace Demo
 {
@@ -22,7 +23,7 @@ namespace Demo
             await _currentNavigationPage?.PushViewAsync(view, parameter);
         }
 
-        public async Task PushModalAsync(Page view, object parameter = null)
+        public async Task PushModalAsync(ContentModalPage view, object parameter = null)
         {
             await _currentNavigationPage?.PushModalAsync(view, parameter);
         }

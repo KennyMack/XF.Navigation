@@ -5,13 +5,14 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Demo.Models;
+using XF.Navigation.UI.Pages;
 
 namespace Demo.Views
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class NewItemPage : ContentPage
+    public partial class NewItemPage : ContentModalPage
     {
         public Item Item { get; set; }
 

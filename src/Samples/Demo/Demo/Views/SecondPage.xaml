@@ -4,7 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Demo.Views.SecondPage">
+             x:Class="Demo.Views.SecondPage"
+             xmlns:navBar="clr-namespace:XF.Navigation.NavBar;assembly=XF.Navigation"
+             navBar:XFNavigationPage.NavBarColor="Black"
+             navBar:XFNavigationPage.NavBarTextColor="White"
+             navBar:XFNavigationPage.StatusBarColor="Black"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Second Page"

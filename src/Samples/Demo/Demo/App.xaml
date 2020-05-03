@@ -2,7 +2,9 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:navigation="clr-namespace:XF.Navigation;assembly=XF.Navigation"
+             xmlns:navcfg="clr-namespace:XF.Navigation;assembly=XF.Navigation"
              mc:Ignorable="d"
              x:Class="Demo.App">
 
@@ -14,6 +16,18 @@
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
+
+            <navigation:NavigationColorConfiguration
+                x:Key="NavBarConfig"
+                NavBarColor="#2196F3"
+                NavBarTextColor="Red"
+                StatusBarColor="#0466b5"
+                BackgroundColor="#FFFFFF">
+            </navigation:NavigationColorConfiguration>
+
+            <navcfg:NavigationConfiguration x:Key="NavBarConfig.Style"
+                                    ColorConfiguration="{StaticResource NavBarConfig}"/>
+
         </ResourceDictionary>
     </Application.Resources>
     

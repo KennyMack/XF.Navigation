@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XF.Navigation.UI.Pages;
 
 namespace XF.Navigation.Extras
 {
@@ -14,7 +15,7 @@ namespace XF.Navigation.Extras
 
         Task PopAsync();
 
-        Task PushModalAsync(Page view, object parameter = null);
+        Task PushModalAsync(ContentModalPage view, object parameter = null);
 
         Task PopModalAsync();
     }

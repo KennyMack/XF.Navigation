@@ -1,4 +1,5 @@
 ﻿
+using Rg.Plugins.Popup;
 using System;
 
 namespace XF.Navigation.IOS
@@ -11,9 +12,10 @@ namespace XF.Navigation.IOS
 
         public static void Init()
         {
-
+            Popup.Init();
             IsInitialized = true;
             OnInitialized?.Invoke(null, EventArgs.Empty);
+            
         }
 
     }

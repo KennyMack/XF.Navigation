@@ -1,15 +1,91 @@
-﻿using System;
+﻿using Rg.Plugins.Popup.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using XF.Navigation.FormsResources;
+using XF.Navigation.UI.Pages;
 
 namespace XF.Navigation.NavBar
 {
     public class XFNavigationPage : NavigationPage
     {
-        private TitleLabel _customTitleView;
+
+        /// <summary>
+        /// Attached property that is used by <see cref="Page"/>s to determine the status bar color.
+        /// </summary>
+        public static readonly BindableProperty NavBarColorProperty = BindableProperty.Create("NavBarColor", typeof(Color), typeof(XFNavigationPage), Color.Default);
+
+
+        /// <summary>
+        /// Attached property that is used by <see cref="Page"/>s to determine the status bar color.
+        /// </summary>
+        public static readonly BindableProperty NavBarTextColorProperty = BindableProperty.Create("NavBarTextColor", typeof(Color), typeof(XFNavigationPage), Color.Default);
+
+        /// <summary>
+        /// Attached property that is used by <see cref="Page"/>s to determine the status bar color.
+        /// </summary>
+        public static readonly BindableProperty StatusBarColorProperty = BindableProperty.Create("StatusBarColor", typeof(Color), typeof(XFNavigationPage), Color.Default);
+
+
+        /// <summary>
+        /// For binding use only.
+        /// </summary>
+        public static Color GetNavBarColor(BindableObject view)
+        {
+            return (Color)view.GetValue(NavBarColorProperty);
+        }
+
+        /// <summary>
+        /// For binding use only.
+        /// </summary>
+        public static Color GetNavBarTextColor(BindableObject view)
+        {
+            return (Color)view.GetValue(NavBarTextColorProperty);
+        }
+
+        /// <summary>
+        /// For binding use only.
+        /// </summary>
+        public static Color GetStatusBarColor(BindableObject view)
+        {
+            return (Color)view.GetValue(StatusBarColorProperty);
+        }
+
+
+        /// <summary>
+        /// For binding use only.
+        /// </summary>
+        public static void SetNavBarColor(BindableObject view, Color color)
+        {
+            view.SetValue(NavBarColorProperty, color);
+        }
+
+        /// <summary>
+        /// For binding use only.
+        /// </summary>
+        public static void SetNavBarTextColor(BindableObject view, Color color)
+        {
+            view.SetValue(NavBarTextColorProperty, color);
+        }
+
+        /// <summary>
+        /// For binding use only.
+        /// </summary>
+        public static void SetStatusBarColor(BindableObject view, Color color)
+        {
+            view.SetValue(StatusBarColorProperty, color);
+        }
+
+
+        // private TitleLabel _customTitleView;
+        /// <summary>
+        /// Control current navigation stack
+        /// </summary>
+        public INavigation PageNavigation;
 
         /// <summary>
         /// Initializes a new instance of <see cref="XFNavigationPage"/>.
@@ -21,8 +97,8 @@ namespace XF.Navigation.NavBar
             {
                 rootPage.SetDynamicResource(BackgroundColorProperty, MaterialConstants.Color.BACKGROUND);
             }*/
-
-            ChangeFont(rootPage);
+            PageNavigation = this.Navigation;
+            
             ChangeBarTextColor(rootPage);
             ChangeBarBackgroundColor(rootPage);
         }
@@ -63,6 +139,31 @@ namespace XF.Navigation.NavBar
             UpdatePage(CurrentPage);
         }
 
+        public async Task PushModalAsync(ContentModalPage page, bool animated)
+        {
+            var ab = PageNavigation.ModalStack;
+            await PopupNavigation.Instance.PushAsync(page, animated);
+
+            var ac = PageNavigation.ModalStack;
+        }
+
+        public async Task PopModalAsync(bool animated)
+        {
+            var ab = PageNavigation.ModalStack;
+            await PopupNavigation.Instance.PopAsync(animated);
+            var ac = PageNavigation.ModalStack;
+        }
+
+        public async Task PushViewAsync(Page view, bool animated)
+        {
+            await PageNavigation.PushAsync(view, animated);
+        }
+
+        public async Task PopViewAsync(bool animated)
+        {
+            await PageNavigation.PopAsync(animated);
+        }
+
         protected override void OnPropertyChanging([CallerMemberName] string propertyName = null)
         {
             base.OnPropertyChanging(propertyName);
@@ -95,6 +196,14 @@ namespace XF.Navigation.NavBar
             if (e.PropertyName == nameof(Title) && page.GetValue(TitleViewProperty) is TitleLabel label)
             {
                 label.Text = page.Title;
+            }
+            else if (e.PropertyName == NavBarColorProperty.PropertyName)
+            {
+                ChangeBarBackgroundColor(page);
+            }
+            else if (e.PropertyName == NavBarTextColorProperty.PropertyName)
+            {
+                ChangeBarTextColor(page);
             }
         }
 
@@ -134,85 +243,37 @@ namespace XF.Navigation.NavBar
 
         private void UpdatePage(Page page)
         {
-            /*if (page.BackgroundColor.IsDefault)
-            {
-                page.SetDynamicResource(BackgroundColorProperty, MaterialConstants.Color.BACKGROUND);
-            }*/
-
-            ChangeFont(page);
             ChangeBarTextColor(page);
             ChangeBarBackgroundColor(page);
         }
 
         private void ChangeBarBackgroundColor(Page page)
         {
-            /*var barColor = (Color)page.GetValue(AppBarColorProperty);
+            var barColor = (Color)page.GetValue(NavBarColorProperty);
 
             if (barColor.IsDefault)
             {
-                SetDynamicResource(BarBackgroundColorProperty, MaterialConstants.Color.PRIMARY);
+                SetDynamicResource(BarBackgroundColorProperty, NavigationConstants.Color.NAV_BAR_COLOR);
             }
             else
             {
                 BarBackgroundColor = barColor;
-            }*/
+            }
         }
 
         private void ChangeBarTextColor(Page page)
         {
-            /*var barTextColor = (Color)page.GetValue(AppBarTitleTextColorProperty);
+            var barTextColor = (Color)page.GetValue(NavBarTextColorProperty);
 
             if (page.GetValue(TitleViewProperty) is TitleLabel customTitleView)
             {
                 if (barTextColor.IsDefault)
-                {
-                    BarTextColor = customTitleView.TextColor = Material.Color.OnPrimary;
-                }
+                    BarTextColor = customTitleView.TextColor = Forms.Navigator.Color.NavBarTextColor;
                 else
-                {
                     BarTextColor = customTitleView.TextColor = barTextColor;
-                }
             }
             else
-            {
-                BarTextColor = barTextColor.IsDefault ? Material.Color.OnPrimary : barTextColor;
-            }*/
-        }
-
-        private void ChangeFont(Page page)
-        {
-            /*var currentTitleView = page.GetValue(TitleViewProperty);
-
-            var textAlignment = (TextAlignment)page.GetValue(AppBarTitleTextAlignmentProperty);
-
-            if (currentTitleView != null)
-            {
-                if (currentTitleView is TitleLabel titleLabelView)
-                {
-                    titleLabelView.HorizontalTextAlignment = textAlignment;
-                }
-                return;
-            }
-
-            _customTitleView = new TitleLabel();
-
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    _customTitleView.Margin = Navigation.NavigationStack.Count == 1 ? new Thickness(8, 0, 8, 0) : new Thickness(8, 0, 32, 0);
-                    break;
-                case Device.Android when Navigation.NavigationStack.Count > 1 && page.ToolbarItems.Count == 0:
-                    _customTitleView.Margin = new Thickness(0, 0, 72, 0);
-                    break;
-            }
-
-            page.SetValue(TitleViewProperty, _customTitleView);
-
-            _customTitleView.VerticalTextAlignment = TextAlignment.Center;
-            _customTitleView.VerticalOptions = LayoutOptions.FillAndExpand;
-            _customTitleView.HorizontalOptions = LayoutOptions.FillAndExpand;
-            _customTitleView.HorizontalTextAlignment = textAlignment;
-            _customTitleView.Text = page.Title;*/
+                BarTextColor = barTextColor.IsDefault ? Forms.Navigator.Color.NavBarTextColor : barTextColor;
         }
     }
     internal class TitleLabel : Label { }

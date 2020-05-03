@@ -140,10 +140,10 @@ namespace XF.Navigation.Droid.Renderers
             {
                 ChangeElevation(page);
             }
-            else if (e.PropertyName == MaterialNavigationPage.StatusBarColorProperty.PropertyName)
+            else*/ if (e.PropertyName == XFNavigationPage.StatusBarColorProperty.PropertyName)
             {
                 ChangeStatusBarColor(page);
-            }*/
+            }
         }
 
         protected override Task<bool> OnPopToRootAsync(Page page, bool animated)
@@ -219,9 +219,9 @@ namespace XF.Navigation.Droid.Renderers
 
         private void ChangeStatusBarColor(Page page)
         {
-            /*var statusBarColor = (Color)page.GetValue(XFNavigationPage.StatusBarColorProperty);
+            var statusBarColor = (Color)page.GetValue(XFNavigationPage.StatusBarColorProperty);
 
-            Forms.Material.PlatformConfiguration.ChangeStatusBarColor(statusBarColor.IsDefault ? Forms.Material.Color.PrimaryVariant : statusBarColor);*/
+            Forms.Navigator.PlatformConfiguration.ChangeStatusBarColor(statusBarColor.IsDefault ? Forms.Navigator.Color.StatusBarColor : statusBarColor);
         }
 
         public override void AddView(Android.Views.View child)
