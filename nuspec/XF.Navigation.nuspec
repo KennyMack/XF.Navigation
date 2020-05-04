@@ -20,8 +20,8 @@
       <file src="..\icons\XF.Navigation.png" target="icons\" />
       <file src="readme.txt" target="readme.txt" />
       <!--PCL-->
-      <file src="..\src\XF.Navigation\bin\Release\netstandard1.0\XF.Navigation.dll" target="lib\netstandard1.0" />
-      <file src="..\src\XF.Navigation\bin\Release\netstandard1.0\XF.Navigation.pdb" target="lib\netstandard1.0" />
+      <file src="..\src\XF.Navigation\bin\Release\netstandard2.0\XF.Navigation.dll" target="lib\netstandard1.0" />
+      <file src="..\src\XF.Navigation\bin\Release\netstandard2.0\XF.Navigation.pdb" target="lib\netstandard1.0" />
       <!--Android-->
       <file src="..\src\XF.Navigation.Droid\bin\Release\XF.Navigation.dll" target="lib\MonoAndroid" />
       <file src="..\src\XF.Navigation.Droid\bin\Release\XF.Navigation.pdb" target="lib\MonoAndroid" />
