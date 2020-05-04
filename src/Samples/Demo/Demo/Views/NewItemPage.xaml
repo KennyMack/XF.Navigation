@@ -9,15 +9,14 @@
     mc:Ignorable="d"
     x:Class="Demo.Views.NewItemPage"
     Title="New Item">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
-    </ContentPage.ToolbarItems>
-    <pages:ContentModalPage.BasePageTitleBarRightContent>
+    <pages:ContentModalPage.XFToolbarItems>
+        <toolbaritems:XFToolBarButton Text="Cancel"
+                                      Clicked="Cancel_Clicked">
+        </toolbaritems:XFToolBarButton>
         <toolbaritems:XFToolBarButton Text="Save"
-                                      Padding="0"></toolbaritems:XFToolBarButton>
-    </pages:ContentModalPage.BasePageTitleBarRightContent>
+                                      Clicked="Save_Clicked" >
+        </toolbaritems:XFToolBarButton>
+    </pages:ContentModalPage.XFToolbarItems>
     <pages:ContentModalPage.BasePageContent>
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Text" FontSize="Medium" />

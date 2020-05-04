@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace XF.Navigation.FormsResources
+﻿namespace XF.Navigation.FormsResources
 {
     public static class NavigationConstants
     {

@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Foundation;
+using Xamarin.Forms;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -35,3 +36,4 @@ using Foundation;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyVersion("1.0.0.1")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: ExportFont("XFNavigationFontAwesome5Solid.otf", Alias = "XFNavigationFontAwesome5Solid")]

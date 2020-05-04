@@ -1,9 +1,6 @@
 ﻿using Rg.Plugins.Popup.Services;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using XF.Navigation.FormsResources;
@@ -98,9 +95,36 @@ namespace XF.Navigation.NavBar
                 rootPage.SetDynamicResource(BackgroundColorProperty, MaterialConstants.Color.BACKGROUND);
             }*/
             PageNavigation = this.Navigation;
-            
+
+            PopupNavigation.Instance.Popped += Popup_Popped;
+            PopupNavigation.Instance.Popping += Popup_Popping;
+            PopupNavigation.Instance.Pushing += Popup_Pushing;
+            PopupNavigation.Instance.Pushed += Popup_Pushed;
+
+
             ChangeBarTextColor(rootPage);
             ChangeBarBackgroundColor(rootPage);
+        }
+
+        private void Popup_Pushed(object sender, Rg.Plugins.Popup.Events.PopupNavigationEventArgs e)
+        {
+            InternalPagePush(e.Page);
+        }
+
+        private void Popup_Pushing(object sender, Rg.Plugins.Popup.Events.PopupNavigationEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void Popup_Popping(object sender, Rg.Plugins.Popup.Events.PopupNavigationEventArgs e)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void Popup_Popped(object sender, Rg.Plugins.Popup.Events.PopupNavigationEventArgs e)
+        {
+            InternalPagePop(this.CurrentPage, e.Page) ;
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -141,17 +165,12 @@ namespace XF.Navigation.NavBar
 
         public async Task PushModalAsync(ContentModalPage page, bool animated)
         {
-            var ab = PageNavigation.ModalStack;
             await PopupNavigation.Instance.PushAsync(page, animated);
-
-            var ac = PageNavigation.ModalStack;
         }
 
         public async Task PopModalAsync(bool animated)
         {
-            var ab = PageNavigation.ModalStack;
             await PopupNavigation.Instance.PopAsync(animated);
-            var ac = PageNavigation.ModalStack;
         }
 
         public async Task PushViewAsync(Page view, bool animated)
@@ -225,9 +244,12 @@ namespace XF.Navigation.NavBar
         /// <param name="poppedPage">The page that will be popped.</param>
         protected virtual void OnPagePop(Page previousPage, Page poppedPage)
         {
-            UpdatePage(previousPage);
+            if (previousPage != null)
+            {
+                UpdatePage(previousPage);
 
-            previousPage.SetValue(BackButtonTitleProperty, string.Empty);
+                previousPage.SetValue(BackButtonTitleProperty, string.Empty);
+            }
         }
 
         /// <summary>

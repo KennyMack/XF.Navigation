@@ -1,10 +1,7 @@
-﻿using System;
-using System.Linq;
-using Android.Content;
+﻿using Android.Content;
 using Android.OS;
-using XF.Navigation.Droid.Renderers;
-using Xamarin.Forms;
 using Rg.Plugins.Popup;
+using System;
 
 namespace XF.Navigation.Droid
 {
@@ -19,6 +16,8 @@ namespace XF.Navigation.Droid
         public static void Init(Context context, Bundle bundle)
         {
             Context = context;
+
+
             IsInitialized = true;
             OnInitialized?.Invoke(null, EventArgs.Empty);
             Popup.Init(context, bundle);

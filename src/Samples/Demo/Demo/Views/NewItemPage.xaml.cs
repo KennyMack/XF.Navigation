@@ -32,12 +32,10 @@ namespace Demo.Views
         async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "AddItem", Item);
-            await Navigation.PopModalAsync();
+            await App._Navigation.PopModalAsync();
         }
 
-        async void Cancel_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PopModalAsync();
-        }
+        async void Cancel_Clicked(object sender, EventArgs e) =>
+            await App._Navigation.PopModalAsync();
     }
 }

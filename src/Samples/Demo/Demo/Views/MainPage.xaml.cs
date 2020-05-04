@@ -20,8 +20,6 @@ namespace Demo.Views
             InitializeComponent();
 
             MasterBehavior = MasterBehavior.SplitOnPortrait;
-
-           // MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)

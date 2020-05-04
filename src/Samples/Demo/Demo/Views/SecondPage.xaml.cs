@@ -1,9 +1,5 @@
 ﻿using Rg.Plugins.Popup.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -18,12 +14,7 @@ namespace Demo.Views
             InitializeComponent();
         }
 
-        private async void ToolbarItem_Clicked(object sender, EventArgs e)
-        {
-
-            var page = new SecondPageModal();
-
-            await PopupNavigation.Instance.PushAsync(page);
-        }
+        private async void ToolbarItem_Clicked(object sender, EventArgs e) =>
+            await App._Navigation.PushModalAsync(new SecondPageModal());
     }
 }

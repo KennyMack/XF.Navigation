@@ -56,9 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <BundleResource Include="Resources\FontAwesome5Brands.otf" />
-    <BundleResource Include="Resources\FontAwesome5Regular.otf" />
-    <BundleResource Include="Resources\FontAwesome5Solid.otf" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Navigator.cs" />
@@ -73,12 +70,6 @@
       <Name>XF.Navigation</Name>
       <Private>True</Private>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\drawable\times-solid.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\drawable\times_solid.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

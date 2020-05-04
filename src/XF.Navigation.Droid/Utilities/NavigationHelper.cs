@@ -1,5 +1,4 @@
-﻿using System;
-using Android.Content.Res;
+﻿using Android.Content.Res;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Util;
@@ -7,6 +6,7 @@ using AndroidX.Core.Content;
 using AndroidX.Core.Graphics;
 using AndroidX.Core.Graphics.Drawable;
 using AndroidX.Core.View;
+using System;
 using Xamarin.Forms.Platform.Android;
 
 namespace XF.Navigation.Droid.Utilities

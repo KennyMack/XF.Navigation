@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using Demo.Models;
-using Demo.Views;
+﻿using Demo.Models;
 using Demo.ViewModels;
+using System;
+using System.ComponentModel;
+using Xamarin.Forms;
 
 namespace Demo.Views
 {
@@ -25,13 +18,15 @@ namespace Demo.Views
             InitializeComponent();
 
             BindingContext = viewModel = new ItemsViewModel();
+            viewModel.PagePushed += (s, e) => DisplayAlert("Pushed", "View Pushed", "OK");
+            viewModel.PagePopped += (s, e) => DisplayAlert("Popped", "View Popped", "OK");
         }
 
         async void OnItemSelected(object sender, EventArgs args)
         {
             var layout = (BindableObject)sender;
             var item = (Item)layout.BindingContext;
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            await App._Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
         }
 
         async void AddItem_Clicked(object sender, EventArgs e)

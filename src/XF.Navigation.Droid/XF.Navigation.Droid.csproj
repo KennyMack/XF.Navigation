@@ -318,14 +318,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\FontAwesome5Brands.otf" />
-    <AndroidAsset Include="Assets\FontAwesome5Regular.otf" />
-    <AndroidAsset Include="Assets\FontAwesome5Solid.otf" />
-    <AndroidAsset Include="Assets\fa-solid-900.ttf" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\times-solid.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Annotations.28.0.0.3\build\monoandroid90\Xamarin.Android.Support.Annotations.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Annotations.28.0.0.3\build\monoandroid90\Xamarin.Android.Support.Annotations.targets')" />

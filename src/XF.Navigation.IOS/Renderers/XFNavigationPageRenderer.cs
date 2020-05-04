@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ObjCRuntime;
+using System;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Foundation;
-using ObjCRuntime;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -91,10 +88,10 @@ namespace XF.Navigation.IOS.Renderers
             {
                 ChangeElevation(page);
             }
-            else if (e.PropertyName == XFNavigationPage.StatusBarColorProperty.PropertyName)
+            else */if (e.PropertyName == XFNavigationPage.StatusBarColorProperty.PropertyName)
             {
                 ChangeStatusBarColor(page);
-            }*/
+            }
         }
 
         public override UIViewController[] PopToRootViewController(bool animated)
@@ -160,9 +157,9 @@ namespace XF.Navigation.IOS.Renderers
 
         private static void ChangeStatusBarColor(Page page)
         {
-            /*var statusBarColor = (Color)page.GetValue(XFNavigationPage.StatusBarColorProperty);
+            var statusBarColor = (Color)page.GetValue(XFNavigationPage.StatusBarColorProperty);
 
-            Forms.Material.PlatformConfiguration.ChangeStatusBarColor(statusBarColor.IsDefault ? Forms.Material.Color.PrimaryVariant : statusBarColor);*/
+            Forms.Navigator.PlatformConfiguration.ChangeStatusBarColor(statusBarColor.IsDefault ? Forms.Navigator.Color.StatusBarColor : statusBarColor);
         }
 
         private class NavigationControllerDelegate : UINavigationControllerDelegate

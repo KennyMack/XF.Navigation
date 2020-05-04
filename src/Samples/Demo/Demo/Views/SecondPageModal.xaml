@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages1:ContentPageModal  xmlns:pages1="clr-namespace:XF.Navigation.UI.Pages;assembly=XF.Navigation" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+<pages1:ContentModalPage  xmlns:pages1="clr-namespace:XF.Navigation.UI.Pages;assembly=XF.Navigation" xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
                   xmlns="http://xamarin.com/schemas/2014/forms"
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -14,7 +14,10 @@
             <StackLayout Spacing="20">
                 <Label HorizontalOptions="Center" Text="User Animation" FontSize="16"></Label>
                 <Button Text="Close" Clicked="OnClose"></Button>
+                
+                
+                
             </StackLayout>
         </Frame>
     </StackLayout>
-</pages1:ContentPageModal>
+</pages1:ContentModalPage>

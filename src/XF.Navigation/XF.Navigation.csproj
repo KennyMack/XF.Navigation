@@ -6,19 +6,27 @@
         <PackageTags>XF_Navigation, XF-Navigation, XF.Navigation, navigation, xamarin, android, plugin, Xamarin.Forms, Forms</PackageTags>
         <PackageIcon>XF.Navigation.png</PackageIcon>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <PackageProjectUrl>https://github.com/KennyMack/XF.Navigation</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/KennyMack/XF.Navigation.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
     <ItemGroup>
       <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.2" />
+      <PackageReference Include="SkiaSharp" Version="1.68.2.1" />
+      <PackageReference Include="SkiaSharp.Views.Forms" Version="1.68.2.1" />
       <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />
     </ItemGroup>
     <ItemGroup>
-      <None Remove="FormsResources\times-solid.svg" />
       <None Remove="readme.txt" />
-      <EmbeddedResource Include="FormsResources\times-solid.svg" />
       <None Include="..\..\icons\XF.Navigation.png">
         <Pack>True</Pack>
         <PackagePath></PackagePath>
       </None>
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="System.Drawing.Common">
+        <HintPath>D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\Xamarin.iOS\v1.0\Facades\System.Drawing.Common.dll</HintPath>
+      </Reference>
     </ItemGroup>
     <ItemGroup>
       <EmbeddedResource Update="FormsResources\NavigationColors.xaml">

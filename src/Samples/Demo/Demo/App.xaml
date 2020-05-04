@@ -20,7 +20,7 @@
             <navigation:NavigationColorConfiguration
                 x:Key="NavBarConfig"
                 NavBarColor="#2196F3"
-                NavBarTextColor="Red"
+                NavBarTextColor="#FFFFFF"
                 StatusBarColor="#0466b5"
                 BackgroundColor="#FFFFFF">
             </navigation:NavigationColorConfiguration>

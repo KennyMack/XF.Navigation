@@ -1,27 +1,17 @@
-﻿using Rg.Plugins.Popup.Pages;
-using Rg.Plugins.Popup.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using System;
 using Xamarin.Forms.Xaml;
 using XF.Navigation.UI.Pages;
 
 namespace Demo.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SecondPageModal : ContentPageModal
+    public partial class SecondPageModal : ContentModalPage
     {
         public SecondPageModal()
         {
             InitializeComponent();
         }
-        private void OnClose(object sender, EventArgs e)
-        {
-            PopupNavigation.Instance.PopAsync();
-        }
+        private async void OnClose(object sender, EventArgs e) =>
+            await App._Navigation.PopModalAsync();
     }
 }

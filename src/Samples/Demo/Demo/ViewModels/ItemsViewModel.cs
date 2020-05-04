@@ -51,5 +51,21 @@ namespace Demo.ViewModels
                 IsBusy = false;
             }
         }
+
+        public event EventHandler PagePushed;
+        public override void OnViewPushed(object navigationParameter = null)
+        {
+            base.OnViewPushed(navigationParameter);
+            PagePushed?.Invoke(this, new EventArgs());
+        }
+
+        public event EventHandler PagePopped;
+        public override void OnViewPopped()
+        {
+            base.OnViewPopped();
+            PagePopped?.Invoke(this, new EventArgs());
+        }
+
+
     }
 }

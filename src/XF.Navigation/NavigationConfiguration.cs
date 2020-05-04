@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XF.Navigation
 {
-     /// <summary>
-     /// Class that provides navigation configuration
-     /// </summary>
+    /// <summary>
+    /// Class that provides navigation configuration
+    /// </summary>
     public class NavigationConfiguration : BindableObject
     {
         /// <summary>
