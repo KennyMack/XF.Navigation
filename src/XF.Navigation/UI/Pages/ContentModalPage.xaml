@@ -14,33 +14,31 @@
     <pages:PopupPage.Resources>
         <ResourceDictionary Source="NavigationResources.xaml"></ResourceDictionary>
     </pages:PopupPage.Resources>
-    <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
-                x:Name="scViewPage">
-        <Grid x:Name="RootGrid"
+    <Grid x:Name="RootGrid"
                   RowSpacing="0" 
                   ColumnSpacing="0" 
                   VerticalOptions="FillAndExpand" 
                   HorizontalOptions="FillAndExpand">
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="56" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="56" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-            <!-- The actual title bar grid -->
-            <StackLayout Orientation="Horizontal"
+        <!-- The actual title bar grid -->
+        <StackLayout Orientation="Horizontal"
                          Grid.Row="0"
                          Spacing="0"
                          x:Name="gTitleView">
-                <StackLayout WidthRequest="56"
+            <StackLayout WidthRequest="56"
                          HeightRequest="56"
                          Orientation="Horizontal">
-                    <skia:SKCanvasView x:Name="skvCanvas" 
+                <skia:SKCanvasView x:Name="skvCanvas" 
                                    WidthRequest="56"
                                    HeightRequest="56"
                                    PaintSurface="OnPaintSurface" />
-                </StackLayout>
-                <Label x:Name="TitleLabel" 
+            </StackLayout>
+            <Label x:Name="TitleLabel" 
                        Text="{Binding Title, Source={x:Reference ModalPage}}"
                        HorizontalOptions="StartAndExpand" 
                        VerticalTextAlignment="Center" 
@@ -49,17 +47,18 @@
                        Margin="16, 0, 0, 0"
                        Padding="0"
                        HorizontalTextAlignment="Start" />
-                <toolbaritems:XFToolBarContainer x:Name="TitleBarRightContent" 
+            <toolbaritems:XFToolBarContainer x:Name="TitleBarRightContent" 
                              Orientation="Horizontal" 
                              HorizontalOptions="EndAndExpand">
-                    
-                    <!-- This is where content for the right part of the title bar goes -->
-                </toolbaritems:XFToolBarContainer>
-            </StackLayout>
 
-            <Grid x:Name="BaseContentGrid" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="1">
+                <!-- This is where content for the right part of the title bar goes -->
+            </toolbaritems:XFToolBarContainer>
+        </StackLayout>
+        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                x:Name="scViewPage" Grid.Row="1">
+            <Grid x:Name="BaseContentGrid" RowSpacing="0" ColumnSpacing="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <!--This is the placeholder where actual content will be loaded into...-->
             </Grid>
-        </Grid>
-    </ScrollView>
+        </ScrollView>
+    </Grid>
 </pages:PopupPage>
