@@ -11,9 +11,9 @@
                   NavigationPage.HasNavigationBar="True"
                   x:Name="ModalPage"
              x:Class="XF.Navigation.UI.Pages.ContentModalPage">
-    <pages:PopupPage.Resources>
+    <!--<pages:PopupPage.Resources>
         <ResourceDictionary Source="NavigationResources.xaml"></ResourceDictionary>
-    </pages:PopupPage.Resources>
+    </pages:PopupPage.Resources>-->
     <Grid x:Name="RootGrid"
                   RowSpacing="0" 
                   ColumnSpacing="0" 
